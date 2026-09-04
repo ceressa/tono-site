@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Tono">
+<title>Tono</title>
+<g stroke="#10333A" stroke-width="7">
+  <rect x="20" y="14"  width="160" height="44" rx="12" fill="#7FCACB"/>
+  <rect x="20" y="78"  width="160" height="44" rx="12" fill="#2A9297"/>
+  <rect x="20" y="142" width="160" height="44" rx="12" fill="#0B565E"/>
+</g>
+</svg>

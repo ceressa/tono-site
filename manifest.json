@@ -1,0 +1,15 @@
+{
+  "id": "/",
+  "name": "Tono",
+  "short_name": "Tono",
+  "description": "A quiet puzzle about tones. Pour until every tube holds a single tone. Sixty levels, no clock, free undo. Coming soon to Android.",
+  "lang": "en",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#FFF4FB",
+  "theme_color": "#FFF4FB",
+  "icons": [
+    {"src": "/assets/tono-mark.svg", "sizes": "any", "type": "image/svg+xml"}
+  ]
+}

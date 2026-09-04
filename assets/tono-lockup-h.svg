@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 530 200" width="530" height="200" role="img" aria-label="Tono">
+<title>Tono</title>
+<g stroke="#10333A" stroke-width="7">
+  <rect x="20" y="14"  width="160" height="44" rx="12" fill="#7FCACB"/>
+  <rect x="20" y="78"  width="160" height="44" rx="12" fill="#2A9297"/>
+  <rect x="20" y="142" width="160" height="44" rx="12" fill="#0B565E"/>
+</g>
+<text x="260" y="100" fill="#10333A" font-size="92" font-weight="900" letter-spacing="2"
+      font-family="Nunito, 'Trebuchet MS', 'Segoe UI', system-ui, sans-serif"
+      dominant-baseline="central">TONO</text>
+</svg>

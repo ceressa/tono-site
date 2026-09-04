@@ -1,0 +1,51 @@
+/* Palmo yasal sayfalari. Ayni palet, tek sutun, okunmak icin.
+ *
+ * @import YOK: Colmo'da legal.css ilk satirinda style.css'i import ediyordu ve
+ * import zinciri paralel yuklenmez, iki istek seri kosuyordu. Burada iki dosya
+ * da <link> ile geliyor (bkz. build.py head()).
+ *
+ * Kabartma yine kati ofset ve daima asagi; oyunun kurali burada da bozulmuyor.
+ */
+
+.yasal { padding: 40px 0 60px; }
+.yasal .kap { width: min(760px, 92vw); }
+
+.yasal h1 {
+  font-size: clamp(28px, 4.4vw, 38px); font-weight: 900;
+  color: var(--ink); letter-spacing: -.02em; margin-bottom: 6px;
+}
+.yasal .tarih { color: var(--text-2); font-size: 14.5px; font-weight: 800; margin-bottom: 26px; }
+
+.yasal .govde {
+  background: var(--surface); border: var(--s-patch) solid var(--ink);
+  border-radius: var(--r-card); box-shadow: var(--lift-panel);
+  padding: 30px 28px;
+}
+@media (max-width: 560px) { .yasal .govde { padding: 22px 18px; } }
+
+.yasal h2 {
+  text-align: left; font-size: 20px; margin: 28px 0 8px;
+  color: var(--ink);
+}
+.yasal h2:first-child { margin-top: 0; }
+.yasal p { margin-bottom: 12px; color: var(--text); }
+/* ol da ul ile ayni girinti: satir 51'deki `* { padding: 0 }` sifirlamasi
+ * isaretleri kutunun disina itiyor ve padding olmadan numaralar kirpiliyor.
+ * Silme sayfasindaki adimlar numarali olmak zorunda (magaza formu sirali adim
+ * istiyor), o yuzden kural burada. */
+.yasal ul, .yasal ol { margin: 0 0 14px 20px; }
+.yasal li { margin-bottom: 8px; color: var(--text); }
+.yasal strong { color: var(--ink); }
+
+.yasal .vurgu {
+  background: var(--well); border: var(--s-patch) solid var(--ink);
+  border-radius: var(--r-chrome); padding: 16px 18px; margin: 18px 0;
+}
+.yasal .vurgu p:last-child { margin-bottom: 0; }
+
+.geri {
+  display: inline-flex; align-items: center; gap: 7px;
+  margin-bottom: 22px; text-decoration: none; font-weight: 800; font-size: 15px;
+  color: var(--ink);
+}
+.geri:hover { color: var(--pink-dark); }

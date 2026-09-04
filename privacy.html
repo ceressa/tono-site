@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="What Tono keeps on your device and why nothing leaves it: no account, no analytics, no crash reporting, and an ad library that is never started in this version.">
+    <meta name="robots" content="index, follow">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tono.dozi.app/privacy.html">
+    <meta property="og:title" content="Privacy policy - Tono">
+    <meta property="og:description" content="What Tono keeps on your device and why nothing leaves it: no account, no analytics, no crash reporting, and an ad library that is never started in this version.">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:site_name" content="Tono">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Privacy policy - Tono">
+    <meta name="twitter:description" content="What Tono keeps on your device and why nothing leaves it: no account, no analytics, no crash reporting, and an ad library that is never started in this version.">
+    <meta name="theme-color" content="#FFF4FB">
+    <title>Privacy policy - Tono</title>
+    <link rel="canonical" href="https://tono.dozi.app/privacy.html">
+    <link rel="alternate" hreflang="en" href="https://tono.dozi.app/privacy.html">
+    <link rel="alternate" hreflang="tr" href="https://tono.dozi.app/tr/privacy.html">
+    <link rel="alternate" hreflang="x-default" href="https://tono.dozi.app/privacy.html">
+    <link rel="icon" type="image/svg+xml" href="/assets/tono-mark.svg">
+    <link rel="manifest" href="/manifest.json">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/legal.css">
+</head>
+<body>
+<header class="ust">
+    <div class="kap">
+        <a class="marka" href="/"><svg class="kilit" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 530 200" role="img" aria-label="Tono">
+<title>Tono</title>
+<g stroke="#10333A" stroke-width="7">
+  <rect x="20" y="14"  width="160" height="44" rx="12" fill="#7FCACB"/>
+  <rect x="20" y="78"  width="160" height="44" rx="12" fill="#2A9297"/>
+  <rect x="20" y="142" width="160" height="44" rx="12" fill="#0B565E"/>
+</g>
+<text x="260" y="100" fill="#10333A" font-size="92" font-weight="900" letter-spacing="2"
+      font-family="Nunito, 'Trebuchet MS', 'Segoe UI', system-ui, sans-serif"
+      dominant-baseline="central">TONO</text>
+</svg></a>
+        <div class="diller"><a href="/privacy.html" hreflang="en" aria-current="page">English</a><a href="/tr/privacy.html" hreflang="tr">Türkçe</a></div>
+    </div>
+</header>
+
+<section class="yasal">
+    <div class="kap">
+        <a class="geri" href="/">&larr; Back to Tono</a>
+        <h1>Privacy policy</h1>
+        <p class="tarih">Last updated: 2026-09-04</p>
+        <div class="govde"><p>Tono is a puzzle game published by Bardino Technology. This policy describes what the game does with data. It is short because the game does very little: it has no account, no sign-in, no server of its own, and it does not build a profile of you.</p><h2>The short version</h2><p>Tono does not collect personal data, and nothing you do in the game is sent to us. There is no analytics SDK and no crash reporting SDK in the build. We never see your progress, your settings, or that you installed the game at all.</p><h2>What is stored on your device</h2><p>Everything the game remembers is written to your phone's own app storage and stays there. Nothing in this list leaves the device:</p><ul><li>your progress: for each level you finished, the best star count (<code>stars.1</code>, <code>stars.2</code> and so on);</li><li>your settings: music level, sound-effects level and whether haptics are on;</li><li>a flag recording whether the ad-free purchase was made, and two counters the ad pacing would use. In this version nothing sets them, because no ads are shown.</li></ul><p>This data has no name, no e-mail and no identifier attached to it. Deleting the app removes all of it. You can also clear the progress from inside the game, see the deletion page.</p><h2>Advertising: none in this version</h2><p>The build carries Google's Mobile Ads library, but it is switched off. In the code the switch is <code>haveRealUnits</code> and it is <code>false</code>, and the ad system returns before it starts. The practical consequences are worth stating plainly:</p><ul><li>no ad is ever requested and no ad is ever shown;</li><li>the Google Mobile Ads SDK is <strong>never initialised</strong>, so it makes no network request and reads no advertising ID;</li><li>you are never shown a consent form, and on iOS the app never asks for App Tracking Transparency permission, because that request only happens on the code path that starts the ad system.</li></ul><p>If ads are ever switched on, this page will be updated and the store's data safety declaration corrected <em>before</em> that version is published, not after.</p><h2>Purchases</h2><p>The game contains a one-time, non-consumable product (<code>com.bardino.tono.remove_ads</code>) that removes ads. In this version it is <strong>not offered</strong>: the settings row that would sell it is hidden while ads are off, so there is nothing to buy.</p><p>The game does still ask Google Play Billing whether the product exists and whether you already own it, which happens when the app starts. That conversation is between your device and Google Play. We never receive your payment details: card numbers and billing addresses go to Google, never to us, and we could not see them if we wanted to.</p><h2>Children</h2><p>Tono is suitable for all ages, and because it collects nothing it collects nothing from children either. There is no chat, no user-generated content, no social feature and no link out to a social network.</p><h2>Permissions</h2><p>The game asks for no runtime permissions. It needs no camera, no microphone, no contacts, no location and no files. It plays offline; an internet connection is only used by Google Play Billing, and the game works without one.</p><h2>Third parties</h2><p>Two Google services can be involved and neither receives anything we send them:</p><ul><li><strong>Google Play</strong> distributes the app and handles billing, under Google's own privacy policy;</li><li><strong>Google Mobile Ads</strong> ships inside the app but is dormant in this version, as described above.</li></ul><h2>Changes</h2><p>If this policy changes, the date at the top of the page changes with it. The pages are generated from a single source, so a date here means that page actually changed.</p><h2>Contact</h2><p>Questions, or a request about your data: <a href="mailto:info@dozi.app">info@dozi.app</a>.</p></div>
+    </div>
+</section>
+<footer>
+    <div class="kap">
+        <span>Tono is made by <a href="https://dozi.app">Bardino Technology</a>.</span>
+        <div class="f-baglantilar">
+            <a href="/privacy.html">Privacy</a>
+            <a href="/terms.html">Terms of use</a>
+            <a href="/account-deletion.html">Account deletion</a>
+        </div>
+    </div>
+    <div class="kap f-alt">&copy; 2026 Bardino Technology &middot; com.bardino.tono</div>
+</footer>
+
+</body>
+</html>

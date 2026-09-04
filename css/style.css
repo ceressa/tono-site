@@ -1,0 +1,224 @@
+/* Palmo - palmo.dozi.app
+ *
+ * Palet ve olculer oyunun jetonlarindan alindi, siteye renk uydurulmadi.
+ * Kaynak: Brainstorming/palmo/design-r3/tokens/{colors,numo,elevation,space,
+ * typography}.css ve uygulamadaki lib/design/tokens.dart. Siteyi gorup
+ * uygulamayi acan kisi ayni urune bakmali.
+ *
+ * Iki aile yasasi burada da gecerli:
+ *   1. Golge asla blur icermez. Derinlik KATI ofset cikintidir.
+ *   2. Ofset daima ASAGI: 0 Npx 0. Yan kacis yok. (Colmo'nun sitesi 3px 3px
+ *      kullaniyordu; Palmo'nun elevation.css'i yan ofseti acikca reddediyor.)
+ */
+
+:root {
+  /* zemin / yuzey / cukur */
+  --bg:         #FFF4FB;
+  --surface:    #FFFFFF;
+  --well:       #FBE6F2;
+  --well-deep:  #EFD0E4;
+
+  /* murekkep + metin. --ink KONTURDUR, govde metni --text. */
+  --ink:        #1B2F4A;
+  --ink-soft:   #3E5878;
+  --text:       #3A2A4D;
+  --text-2:     #756B8E;
+
+  /* Yalnizca sitede kullanilanlar yazildi. Paletin tamami (numo 1-9, mor,
+     acik tonlar) oyunun jetonlarinda; kullanilmayani buraya kopyalamak olu
+     degisken uretir. Numo renkleri siteye wordmark SVG'sinden geliyor. */
+  --pink-dark:  #E03D84;
+  --teal-dark:  #0FA3A3;
+  --yellow:     #FFC83D;
+
+  /* space.css yaricaplari */
+  --r-chrome: 14px;
+  --r-card:   20px;
+  --r-panel:  28px;
+  --r-pill:   999px;
+
+  /* space.css konturlari */
+  --s-patch: 3px;
+  --s-card:  4px;
+  --s-panel: 6px;
+
+  /* elevation.css: uc kot, hepsi asagi, hicbiri blur'lu degil */
+  --lift-chrome: 0 3px 0 var(--ink);
+  --lift-card:   0 4px 0 var(--ink);
+  --lift-panel:  0 8px 0 var(--ink);
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+/* Genislik ezilirken yukseklik oznitelikte kalirsa 844 piksellik bos bir satir
+   aciliyor ve metin ekranin altina dusuyor. height:auto sart. */
+img { max-width: 100%; height: auto; display: block; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: Nunito, system-ui, -apple-system, "Segoe UI", sans-serif;
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+.kap { width: min(1120px, 92vw); margin: 0 auto; }
+
+a { color: var(--pink-dark); }
+
+/* ── Ust bar ─────────────────────────────────────────────────────────── */
+.ust {
+  position: sticky; top: 0; z-index: 50;
+  background: rgba(255, 244, 251, .94);
+  border-bottom: var(--s-patch) solid var(--ink);
+}
+.ust .kap { display: flex; align-items: center; gap: 14px; padding: 10px 0; }
+.marka { display: flex; align-items: center; text-decoration: none; }
+/* Yatay kilit HTML'e gomulu SVG: harfleri Nunito 900 ve o font ancak belgeye
+   gomuluyken uygulanir (bkz. build.py inline_svg). Kutu, kontur ya da kot
+   eklenmiyor; kilidin kendi konturu var. */
+.marka .kilit { height: 38px; width: auto; display: block; }
+@media (max-width: 560px) { .marka .kilit { height: 32px; } }
+
+/* Dil secici: bayrak yok. Bayrak dili degil ulkeyi gosterir ve altisi da
+   birden cok ulkede konusuluyor. */
+.diller { margin-left: auto; display: flex; gap: 6px; flex-wrap: wrap; }
+.diller a {
+  display: inline-block; padding: 4px 9px; border-radius: var(--r-chrome);
+  font-size: 13px; font-weight: 800; text-decoration: none;
+  color: var(--text-2); border: 2px solid transparent;
+}
+.diller a:hover { color: var(--ink); border-color: var(--well-deep); }
+.diller a[aria-current="page"] {
+  color: var(--ink); background: var(--surface);
+  border-color: var(--ink); box-shadow: var(--lift-chrome);
+}
+
+/* ── Kahraman ────────────────────────────────────────────────────────── */
+.kahraman { padding: 58px 0 44px; }
+.kahraman .kap {
+  display: grid; grid-template-columns: 1.05fr .95fr; gap: 46px;
+  align-items: center;
+}
+@media (max-width: 860px) {
+  .kahraman { padding: 34px 0 28px; }
+  .kahraman .kap { grid-template-columns: 1fr; gap: 30px; }
+}
+
+.rozet {
+  display: inline-flex; align-items: center; gap: 8px;
+  background: var(--yellow); color: var(--ink);
+  border: var(--s-patch) solid var(--ink); border-radius: var(--r-pill);
+  box-shadow: var(--lift-chrome);
+  padding: 6px 15px; font-weight: 900; font-size: 14px; letter-spacing: .02em;
+}
+.rozet::before {
+  content: ""; width: 9px; height: 9px; border-radius: 50%;
+  background: var(--ink);
+}
+
+.kahraman h1 {
+  margin: 20px 0 14px;
+  font-size: clamp(33px, 5.4vw, 52px); line-height: 1.1;
+  font-weight: 900; letter-spacing: -.02em; color: var(--ink);
+}
+.kahraman h1 em { font-style: normal; color: var(--pink-dark); }
+.alt { font-size: 18px; color: var(--text-2); max-width: 48ch; }
+.kucuk { margin-top: 14px; font-size: 14px; color: var(--text-2); font-weight: 800; }
+
+/* Magaza yeri. Oyun yayinda olmadigi icin burada baglanti YOK: tiklanmayan bir
+   rozet, tiklaninca hicbir yere gitmeyen bir dugmeden durust. Cikinca bu iki
+   span <a> olur ve magaza rozetleri buraya gelir. */
+.magaza { margin-top: 22px; display: flex; gap: 12px; flex-wrap: wrap; }
+.magaza-cip {
+  display: inline-flex; align-items: baseline; gap: 8px;
+  background: var(--surface); color: var(--ink);
+  border: var(--s-patch) solid var(--ink); border-radius: var(--r-pill);
+  box-shadow: var(--lift-chrome);
+  padding: 9px 18px; font-weight: 900; font-size: 15px;
+}
+.magaza-cip b { color: var(--text-2); font-size: 13px; font-weight: 800; }
+
+.telefon { display: flex; justify-content: center; }
+.telefon img {
+  width: min(300px, 76vw);
+  border-radius: var(--r-panel); border: var(--s-card) solid var(--ink);
+  box-shadow: var(--lift-panel);
+}
+/* Ekran goruntusu yokken: marka isareti. Kendi varligimiz, ekran taklidi
+   degil. Isaretin kendi konturu ve kotu SVG'nin icinde. */
+.telefon .isaret { width: min(190px, 52vw); height: auto; display: block; }
+
+/* ── Bolumler ───────────────────────────────────────────────────────── */
+section { padding: 54px 0; }
+.duvar-bolum {
+  background: var(--well);
+  border-top: var(--s-patch) solid var(--ink);
+  border-bottom: var(--s-patch) solid var(--ink);
+}
+h2 {
+  font-size: clamp(25px, 3.4vw, 34px); font-weight: 900;
+  color: var(--ink); letter-spacing: -.01em; text-align: center;
+}
+.bolum-alt { text-align: center; color: var(--text-2); margin: 10px auto 30px; max-width: 62ch; }
+
+/* Bant: magaza feature graphic'i, tam genislikte. Dosya yoksa build.py bu
+   bolumu hic yazmiyor. */
+.bant { padding: 0 0 54px; }
+.bant img {
+  width: min(1120px, 92vw); margin: 0 auto;
+  border-radius: var(--r-card); border: var(--s-card) solid var(--ink);
+  box-shadow: var(--lift-panel);
+}
+
+/* ── Vitrin ─────────────────────────────────────────────────────────── */
+.vitrin { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+@media (max-width: 900px) { .vitrin { grid-template-columns: repeat(2, 1fr); } }
+.vitrin figure { text-align: center; }
+.vitrin img {
+  border-radius: var(--r-card); border: var(--s-patch) solid var(--ink);
+  box-shadow: var(--lift-card);
+}
+.vitrin figcaption { margin-top: 10px; font-size: 14px; color: var(--text-2); font-weight: 800; }
+
+/* Yer tutucu bir kare TAKLIDI degil, acikca bos bir cerceve: kesik kontur,
+   kot yok (cukur bir sey golge dusurmez). */
+.yer-tutucu {
+  aspect-ratio: 390 / 844;
+  display: flex; align-items: center; justify-content: center;
+  padding: 12px; text-align: center;
+  background: var(--surface);
+  border: var(--s-patch) dashed var(--ink-soft);
+  border-radius: var(--r-card);
+}
+.yer-tutucu span { color: var(--text-2); font-size: 14px; font-weight: 800; }
+
+/* ── Kapanis ────────────────────────────────────────────────────────── */
+.kapanis { text-align: center; }
+.kapanis .kutu {
+  background: var(--surface); border: var(--s-card) solid var(--ink);
+  border-radius: var(--r-panel); box-shadow: var(--lift-panel);
+  padding: 38px 26px; max-width: 720px; margin: 0 auto;
+}
+.kapanis .kutu .bolum-alt { margin-bottom: 0; }
+
+/* ── Altbilgi ───────────────────────────────────────────────────────── */
+footer {
+  border-top: var(--s-patch) solid var(--ink);
+  background: var(--well); padding: 26px 0 30px;
+}
+footer .kap { display: flex; flex-wrap: wrap; gap: 14px; align-items: center; justify-content: space-between; }
+footer span { color: var(--text-2); font-size: 15px; }
+.f-baglantilar { display: flex; gap: 18px; flex-wrap: wrap; }
+.f-baglantilar a { color: var(--ink); font-weight: 800; font-size: 15px; text-decoration: none; }
+.f-baglantilar a:hover { color: var(--pink-dark); text-decoration: underline; }
+.f-alt { margin-top: 14px; color: var(--text-2); font-size: 13.5px; justify-content: flex-start; }
+
+/* Klavye ile gezenin nerede oldugu gorunsun. */
+a:focus-visible {
+  outline: var(--s-patch) solid var(--teal-dark);
+  outline-offset: 3px; border-radius: 4px;
+}
